@@ -1,0 +1,30 @@
+<app-header></app-header>
+<main style="padding-top: 63px; background-color: ghostwhite;">
+    <div class="container-fluid pt-3 pb-3 border-bottom px-lg-5">
+        <div class="row justify-content-md-center">
+            <div class="col-xl-9">
+                <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
+                    <form id="main-search-form" action="/dat-san-online">
+                        <div class="row">
+
+                            <div class="col-lg-6 d-flex align-items-center form-group">
+                                <input type="datetime-local" name="date" class="datepicker datepicker-search form-control border-0 shadow-0"
+                                  data-provide="datepicker" value="T6, 17-06-2022">
+                              </div>
+                            <!-- <div class="col-lg-2 d-flex align-items-center form-group">
+                                <input value="02:00" type="text" name="begin_time" title="Vào lúc" placeholder="Vào lúc"
+                                    data-style="btn-form-control" class="form-control border-0 shadow-0 timepicker">
+                            </div> -->
+                            <div class="col-lg-4" style="margin-bottom: 20px;">
+                                <button type="submit" class="btn btn-primary btn-block h-100"
+                                    id="main-search__submit">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</main>
+<app-footer></app-footer>

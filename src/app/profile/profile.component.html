@@ -1,0 +1,139 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header>
+    <div class="sport-nav navbar-fixed">
+        <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <a href="" navnar-brand py-1 ml-2>
+                        <img src="../../assets/logo/logo.svg" alt="Logo" style="width: 60px; height: 35px;">
+                    </a>
+                </div>
+                <button type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler navbar-toggler-right collapsed">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="navbar-callapse mr-3 callapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link" routerLink="/rank">Bảng Xếp Hạng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Bài Đăng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link" routerLink="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<main style="padding-top: 63px; background-color: ghostwhite;">
+    <div class="container-fluid container-lg pt-3 pb-3 border-bottom px-lg-5">
+        <div class="row justify-content-md-center mt-3 minimum-heigh ">
+            <div class="col-md-4 col-lg-3 pr-0 bg-white justify-content-center">
+                <div class=" user-sidebar sidebar-md ">
+                    <ul class="navbar-nav " aria-labelledby="">
+                        <li class="nav-item">
+                            <div class="user-brief ">
+                                <a href="#" class="user-brief_avatar m-1">
+                                    <div class="sport_avatar">
+                                        <img src="" alt="">
+                                    </div>
+                                </a>
+                                <div class="d-flex flex-column align-self-center user-brief_right m-md-1">
+                                    <div class="text-muted text-sm d-none d-md-flex ">
+                                        <a href="profile" class="text-decoration-none" style="color: black !important;">
+                                            <i class="fa fa-edit"></i>
+                                            Sửa hồ sơ
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <div class="row ">
+                            <div class="m-2 col-lg-7 col-7 menu-items">
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-user-circle">
+                                        <a href=""  style="color: #93a3b5 !important;" routerLink="/profile" >Thông tin tài khoản</a>
+                                    </i>
+                                </li>
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-clock-o">
+                                        <a href="" routerLink="/timeline" style="color: #93a3b5 !important;">Lịch của tôi</a>
+                                    </i>
+                                </li>
+                                <li class="mb-1" style="color: #93a3b5 !important;">
+                                    <i class="fa fa-unlock-alt">
+                                        <a href="" style="color: #93a3b5 !important;" routerLink="/repassword">Đổi mật khẩu</a>
+                                    </i>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8 col-lg-9 pl-3 pr-3">
+                <div class="user-page-content">
+                    <section class="border-light">
+                        <div class="row justify-content-center m-2">
+                            <h5 class="w-100 text-center d-none d-md-block">Thông tin tài khoản</h5>
+                        </div>
+                        <div class="row justify-content-center m-2">
+                            <div class="col-md-3">
+                                <header class="profile-picture"></header>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="d-flex justify-content-center">
+                                    <form action="" class="w-75" method="post">
+                                        <input type="hidden" name="utf8" value="✓">
+                                        <input type="hidden" name="_method" value="put">
+                                        <div class="form-row">
+                                            <div class="col-md-6 form-group">
+                                                <label for="user_email">Email</label>
+                                                <input class="form-control" placeholder="Email" type="email" value=""
+                                                    name="user[email]" id="user_email">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label for="user_name">Họ Tên</label>
+                                                <input class="form-control" placeholder="Họ Tên" type="text"
+                                                    name="user[name]" id="user_name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="user_phone_attributes_number">Số điện thoại</label>
+                                            <input class="form-control" placeholder="Số điện thoại" type="text"
+                                                name="user[phone_attributes][number]" id="user_phone_attributes_number">
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-12 form-group">
+                                                <label for="user_date_of_birth">Ngày sinh</label>
+                                                <input class="form-control" placeholder="Ngày sinh" type="date"
+                                                    name="user[date_of_birth]" id="user_date_of_birth">
+                                            </div>
+                                        </div>
+
+                                        <button name="button" type="submit" class="btn btn-primary">Cập
+                                            nhật</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<app-footer></app-footer>

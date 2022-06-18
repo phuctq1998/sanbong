@@ -1,0 +1,33 @@
+main{
+    height: 1000px;
+    padding-top: 63px;
+}
+.mySlides {display:none;}
+.btn-primary {
+    color: #fff;
+    background-color: #fc9600;
+    border-color: #fc9600;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.btn {
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.rounded-xl {
+    border-radius: 10rem;
+}
+.search-bar {
+    position: relative;
+    margin-bottom: 0;
+}
+.search-bar {
+    border-radius: 10rem;
+    background: #fff;
+    box-shadow: 0 0 1rem rgb(0 0 0 / 15%);
+}

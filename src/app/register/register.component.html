@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<body>
+    <main style="padding-top: 63px;">
+        <div class="container">
+            <div class="row justify-content-center mt-3">
+                <h4 class="text-center orange-text">Đăng ký tài khoản</h4>
+            </div>
+            <form action="" class="new_user" id="new_user" method="post">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="user_email">Email</label>
+                            <input type="email" name="user[email]" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_password">Mật khẩu</label>
+                            <input autocomplete="off" required="required" pattern=".{6,}" title="ít nhất 6 ký tự"
+                                class="form-control" type="password" name="user[password]" id="user_password">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_password_confirmation">Xác nhận mật khẩu</label>
+                            <input autocomplete="off" required="required" pattern=".{6,}" title="ít nhất 6 ký tự"
+                                class="form-control" type="password" name="user[password_confirmation]"
+                                id="user_password_confirmation">
+                        </div>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <button name="button" type="submit" class="btn btn-outline-orange">Đăng ký</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <hr data-content="hoặc" class="my-3 hr-text letter-spacing-2">
+                    <a class="btn btn btn-outline-primary btn-block btn-social mb-3" href="">
+                        <i class="fa-2x fa fa-facebook-f btn-social-icon"> </i>Đăng nhập với Facebook
+                    </a><a class="btn btn btn-outline-red btn-block btn-social mb-3" href="">
+                        <i class="fa-2x fa fa-google btn-social-icon"></i>Đăng nhập với Google
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<app-footer></app-footer>

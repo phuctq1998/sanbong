@@ -1,0 +1,15 @@
+.btn-primary {
+    color: #fff;
+    background-color: #fc9600;
+    border-color: #fc9600;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.h-100 {
+    height: 100% !important;
+}
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important;
+}
