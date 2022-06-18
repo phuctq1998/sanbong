@@ -14,6 +14,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { RepasswordComponent } from './repassword/repassword.component';
 import { SearchComponent } from './search/search.component';
 import { RankComponent } from './rank/rank.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RankComponent } from './rank/rank.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
