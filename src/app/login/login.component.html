@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <body class="d-flex flex-column h-100">
     <main style="padding-top: 63px;">
         <div class="container-fluid px-3 login">
@@ -8,48 +9,48 @@
                         <div class="mb-4">
                             <h3 class="orange-text">SPORTA</h3>
                             <h4 class="d-none d-md-block">Xin chào bạn</h4>
-                            <a href=""  type="button" class="btn btn-outline-primary btn-block btn-social mb-3">
+                            <a href="" type="button" class="btn btn-outline-primary btn-block btn-social mb-3">
                                 <i class="fa-2x fa fa-facebook-f  btn-social-icon"></i>
                                 Đăng nhập với Facebook
                             </a>
-                            <a href=""  type="button" class="btn btn-outline-red btn-block btn-social mb-3">
+                            <a href="" type="button" class="btn btn-outline-red btn-block btn-social mb-3">
                                 <i class="fa-2x fa fa-google  btn-social-icon"></i>
                                 Đăng nhập với Google
                             </a>
-                            <hr data-content="Hoặc" class="my-3 hr-text letter-spacing-2"> 
-                            <form action="">
-                                <div class="form-group">
-                                    <label for="loginUsername" class="form-label">Địa chỉ Email</label>
-                                    <input autofocus="autofocus" required="required" placeholder="Email"
-                                    class="form-control" type="email" value name="user[email]" id="user_email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label for="loginPassword" class="form-label">Mật khẩu</label>
-                                        </div>
-                                        <input type="password" autocomplete="off" required="required" class="form-control"
+                            <hr data-content="Hoặc" class="my-3 hr-text letter-spacing-2">
+                            <!-- <form action=""> -->
+                            <div class="form-group">
+                                <label for="loginUsername" class="form-label">Tên đăng nhập</label>
+                                <input autofocus="autofocus" required="required" class="form-control" type="email" value
+                                    name="user[email]" id="user_name">
+                            </div>
+                            <div class="form-group mb-2">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="loginPassword" class="form-label">Mật khẩu</label>
+                                    </div>
+                                    <input type="password" autocomplete="off" required="required" class="form-control"
                                         name="user[password]" id="user_password">
-                                    </div>
                                 </div>
-                                <button class="btn btn-block btn-secondary" routerLink="/dashboard">Đăng nhập</button>
-                                <div class="mt-1 row">
-                                    <div class="col-6">
-                                        <a href="" class="form-text small">Quên mật khẩu?</a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="" class="float-right form-text small" routerLink="/register">Đăng ký</a>
-                                    </div>
+                            </div>
+                            <button class="btn btn-block btn-secondary" (click)="login()">Đăng nhập</button>
+                            <div class="mt-1 row">
+                                <div class="col-6">
+                                    <a href="" class="form-text small">Quên mật khẩu?</a>
                                 </div>
-                            </form>
+                                <div class="col-6">
+                                    <a href="" class="float-right form-text small" routerLink="/register">Đăng ký</a>
+                                </div>
+                            </div>
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
                     <div class="overlay pt-5 mt-5 pb-5">
-                      <img class="bg-image" src="">
+                        <img class="bg-image" src="">
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </main>
