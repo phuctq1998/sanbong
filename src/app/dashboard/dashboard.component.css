@@ -40,3 +40,20 @@
 .nav-link:hover{
     color: black !important;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #fc9600;
+    border-color: #fc9600;
+}
+.btn-block {
+    display: block;
+}
+.h-100 {
+    height: 100% !important;
+}
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+.table{
+    margin-bottom: 0px !important;
+}

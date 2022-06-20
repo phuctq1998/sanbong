@@ -43,3 +43,12 @@
 ul.dropmenu{
     float: left;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #fc9600;
+    border-color: #fc9600;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}

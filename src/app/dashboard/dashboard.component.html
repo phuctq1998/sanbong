@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <header>
     <div class="sport-nav navbar-fixed">
         <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
@@ -15,19 +19,13 @@
                 <div class="navbar-callapse mr-3 callapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link" routerLink="/rank">Bảng Xếp Hạng</a>
+                            <a href="" class="nav-link">Danh sách đội</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Danh sách đặt sân</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Bài Đăng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">Quản Lý Sân</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link" routerLink="/profile">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link" >Đăng xuất</a>
+                            <a href="" class="nav-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -35,9 +33,86 @@
         </nav>
     </div>
 </header>
-<body>
-    <main style="padding-top: 63px;">
-        
-    </main>
-</body>
-<app-footer></app-footer>
+<main style="padding-top: 63px; background-color: ghostwhite;">
+    <div class="container-fluid pt-3 pb-3 border-bottom px-lg-5">
+        <div class="row justify-content-md-center">
+            <div class="col-xl-9">
+                <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
+                    <form id="main-search-form" action="/dat-san-online">
+                        <div class="row">
+                            <div class="col-lg-6 d-flex align-items-center form-group">
+                                <input type="date" name="date"
+                                    class="datepicker datepicker-search form-control border-0 shadow-0"
+                                    data-provide="datepicker" value="T6, 17-06-2022">
+                            </div>
+                            <div class="col-lg-4" style="margin-bottom: 20px;">
+                                <button type="submit" class="btn btn-primary btn-block h-100"
+                                    id="main-search__submit">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="border-bottom: 1px solid;">
+        <div class="table-rankings">
+            <table class="table table-responsive-lg text-gray-700 table-striped table-borderless table-hover pd-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Khung giờ</th>
+                        <th scope="col">Số sân được đặt</th>
+                        <th scope="col">Giá/giờ</th>
+                        <th scope="col">Doanh thu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06:00 AM</td>
+                        <td>0.0</td>
+                        <td>1754</td>
+                    </tr>
+                    <tr>
+                        <td>08:00 AM</td>
+                        <td>0.0</td>
+                        <td>1379</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 AM</td>
+                        <td>0.0</td>
+                        <td>1314</td>
+                    </tr>
+                    <tr>
+                        <td>13:00 PM</td>
+                        <td>0.0</td>
+                        <td>1273</td>
+                    </tr>
+                    <tr>
+                        <td>15:00 PM</td>
+                        <td>44.0</td>
+                        <td>0.0</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 PM</td>
+                        <td>31.0</td>
+                        <td>0.0</td>
+                    <tr>
+                        <td>19:00 PM</td>
+                        <td>29.0</td>
+                        <td>0.0</td>
+                    </tr>
+                    <tr>
+                        <td>21:00 PM</td>
+                        <td>24.0</td>
+                        <td>0.0</td>
+                    </tr>
+                    <tr>
+                        <td>23:00 PM</td>
+                        <td>24.0</td>
+                        <td>0.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
