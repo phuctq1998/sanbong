@@ -11,7 +11,6 @@ import { SearchComponent } from './search/search.component';
 import { RankComponent } from './rank/rank.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -21,6 +20,7 @@ const routes: Routes = [
   { path: 'repassword', component: RepasswordComponent },
   { path: 'search', component: SearchComponent },
   { path: 'rank', component: RankComponent },
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
