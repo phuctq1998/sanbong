@@ -11,13 +11,13 @@ import { SearchComponent } from './search/search.component';
 import { RankComponent } from './rank/rank.component';
 
 const routes: Routes = [
-  
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'timeline', component:TimelineComponent },
+  { path: 'timeline', component: TimelineComponent },
   { path: 'repassword', component: RepasswordComponent },
   { path: 'search', component: SearchComponent },
   { path: 'rank', component: RankComponent },
@@ -25,6 +25,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule ]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
