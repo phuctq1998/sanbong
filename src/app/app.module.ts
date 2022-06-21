@@ -15,6 +15,9 @@ import { RepasswordComponent } from './repassword/repassword.component';
 import { SearchComponent } from './search/search.component';
 import { RankComponent } from './rank/rank.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatchesComponent } from './matches/matches.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     TimelineComponent,
     RepasswordComponent,
     SearchComponent,
-    RankComponent
+    RankComponent,
+    MatchesComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

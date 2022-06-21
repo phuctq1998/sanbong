@@ -43,9 +43,48 @@
                         <td>0.0</td>
                         <td>1754</td>
                         <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
+                            <button type="button" class="btn btn-primary h-100 w-50" (click)="openModal(template)">Book</button>
+
+                            <ng-template #template>
+                                <div class="modal-header">
+                                    <h4 class="modal-title pull-left">Look at</h4>
+                                    <button type="button" class="close pull-right" aria-label="Close"
+                                        (click)="modalRef.hide()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Bạn có chắc muốn chọn khung giờ này không?</p>
+                                    <button type="button" class="btn btn-default float-right"
+                                        (click)="confirm(templateNested)">Yes</button>
+                                    <button type="button" class="btn btn-primary " (click)="decline()">No</button>
+                                </div>
+                            </ng-template>
+
+                            <ng-template #templateNested>
+                                <div class="modal-header">
+                                    <h4 class="modal-title pull-left">Check</h4>
+                                    <button type="button" class="close pull-right" aria-label="Close"
+                                        (click)="modalRef2.hide()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Chọn phương thức thanh toán</p>
+                                    <select>
+                                        <option value="">
+                                    <label for="">Online</label>
+                                        </option>
+                                        <option value="">
+                                    <label for="">Tiền mặt</label>
+                                        </option>
+                                    </select><br>
+                                    <button *ngIf="modalRef" type="button" class="btn btn-primary "
+                                      style="margin-top: 10px;"  (click)="modalRef2.hide()">No</button>
+                                    <button *ngIf="modalRef" type="button" class="btn btn-default float-right" 
+                                      style="margin-top: 10px;"  (click)="yesPay()">Yes</button>
+                                </div>
+                            </ng-template>
                         </td>
                     </tr>
                     <tr>

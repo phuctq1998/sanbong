@@ -9,6 +9,8 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { RepasswordComponent } from './repassword/repassword.component';
 import { SearchComponent } from './search/search.component';
 import { RankComponent } from './rank/rank.component';
+import { MatchesComponent } from './matches/matches.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'repassword', component: RepasswordComponent },
   { path: 'search', component: SearchComponent },
   { path: 'rank', component: RankComponent },
+  { path: 'matches', component: MatchesComponent },
+  { path: 'payment', component: PaymentComponent },
   // { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

@@ -44,15 +44,10 @@
     <div class="container-fluid container-lg pt-3 pb-3 border-bottom px-lg-5">
         <div class="row justify-content-md-center mt-3 minimum-heigh">
             <div class="col-md-4 col-lg-3 pr-0 bg-white justify-content-center">
-                <div class=" user-sidebar sidebar-md ">
+                <div class=" user-sidebar sidebar-md " style="margin-top: 50px">
                     <ul class="navbar-nav " aria-labelledby="">
                         <li class="nav-item">
                             <div class="user-brief ">
-                                <a href="#" class="user-brief_avatar m-1">
-                                    <div class="sport_avatar">
-                                        <img src="" alt="">
-                                    </div>
-                                </a>
                                 <div class="d-flex flex-column align-self-center user-brief_right m-md-1">
                                     <div class="text-muted text-sm d-none d-md-flex ">
                                         <a href="profile" class="text-decoration-none" style="color: black !important;">
@@ -96,20 +91,17 @@
                                 <div class="col-xl-3 col-md-3 mb-4">
                                     <label for="form_guests" class="form-label">Trạng thái</label>
                                     <select name="status" id="form_guests" class=" form-control">
-                                        <option value="all" selected="">Tất cả</option>
-                                        <option value="new">Mới/Đã xác nhận</option>
-                                        <option value="pending">Chờ xác nhận</option>
-                                        <option value="done">Đã qua/Hoàn thành</option>
-                                        <option value="cancelled">Đã hủy</option>
+                                        <option value="new">Chưa hoàn thành</option>
+                                        <option value="done">Đã Hoàn thành</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-3 col-md-3 mb-4">
                                     <label for="begin_date" class="form-label">Từ ngày</label>
-                                    <input type="text" id="begin_date" name="begin_date" class="datepicker datepicker-begin form-control" data-provide="datepicker" value="09/05/2022">
+                                    <input type="date" id="begin_date" name="begin_date" class="datepicker datepicker-begin form-control" data-provide="datepicker" value="09/05/2022">
                                 </div>
                                 <div class="col-xl-3 col-md-3 mb-4">
                                     <label for="end_date" class="form-label">Đến ngày</label>
-                                    <input type="text" id="end_date" name="end_date" class="datepicker datepicker-end form-control" data-provide="datepicker" value="09/06/2022">
+                                    <input type="date" id="end_date" name="end_date" class="datepicker datepicker-end form-control" data-provide="datepicker" value="09/06/2022">
                                 </div>
                                 <div class="col-sm-3 mb-4 order-2 order-sm-1">
                                     
@@ -120,10 +112,67 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="row justify-content-center m-2">
-
-                        </div>
                     </section>
+                </div>
+                <div class="container" style="border-bottom: 1px solid;">
+                    <div class="table-rankings">
+                        <table class="table table-responsive-lg text-gray-700 table-striped table-borderless table-hover pd-2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Khung giờ</th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col">Tỷ số</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06:00 AM</td>
+                                    <td>0.0</td>
+                                    <td>1754</td>
+                                </tr>
+                                <tr>
+                                    <td>08:00 AM</td>
+                                    <td>0.0</td>
+                                    <td>1379</td>
+                                </tr>
+                                <tr>
+                                    <td>10:00 AM</td>
+                                    <td>0.0</td>
+                                    <td>1314</td>
+                                </tr>
+                                <tr>
+                                    <td>13:00 PM</td>
+                                    <td>0.0</td>
+                                    <td>1273</td>
+                                </tr>
+                                <tr>
+                                    <td>15:00 PM</td>
+                                    <td>44.0</td>
+                                    <td>0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>17:00 PM</td>
+                                    <td>31.0</td>
+                                    <td>0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>19:00 PM</td>
+                                    <td>29.0</td>
+                                    <td>0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>21:00 PM</td>
+                                    <td>24.0</td>
+                                    <td>0.0</td>
+                                </tr>
+                                <tr>
+                                    <td>23:00 PM</td>
+                                    <td>24.0</td>
+                                    <td>0.0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
