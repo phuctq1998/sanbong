@@ -16,16 +16,19 @@ export class LoginComponent implements OnInit {
 
   login() {
     try {
-      let ten = document.getElementById("user_name") as HTMLInputElement;
+      let userName = document.getElementById("user_name") as HTMLInputElement;
       let password = document.getElementById("user_password") as HTMLInputElement;
       this.http.post<any>('http://localhost:3000/user/login', {
-        ten: ten.value,
+        userName: userName.value,
         password: password.value,
       }).subscribe(data => {
         console.log(data)
-        if (data.errMessage == "Ok") {
+        if (data.code == "0") {
           window.alert("Đăng nhập thành công!");
-          this.router.navigateByUrl('/dashboard');
+          if (data.user.role == 'admin') this.router.navigateByUrl('/dashboard');
+          else this.router.navigateByUrl('/search');
+          document.cookie = "cookieIdUserName=" + data.cookieIdUserName;
+          localStorage.setItem('role', data.user.role)
         }
         else {
           window.alert("Đăng nhập thất bại!")
