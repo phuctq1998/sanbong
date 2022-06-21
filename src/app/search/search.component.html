@@ -4,24 +4,20 @@
         <div class="row justify-content-md-center">
             <div class="col-xl-9">
                 <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
-                    <form id="main-search-form" action="/dat-san-online">
-                        <div class="row">
-
-                            <div class="col-lg-6 d-flex align-items-center form-group">
-                                <input type="date" name="date"
-                                    class="datepicker datepicker-search form-control border-0 shadow-0"
-                                    data-provide="datepicker" value="T6, 17-06-2022">
-                            </div>
-                            <!-- <div class="col-lg-2 d-flex align-items-center form-group">
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center form-group">
+                            <input type="date" id="date"
+                                class="datepicker datepicker-search form-control border-0 shadow-0">
+                        </div>
+                        <!-- <div class="col-lg-2 d-flex align-items-center form-group">
                                 <input value="02:00" type="text" name="begin_time" title="Vào lúc" placeholder="Vào lúc"
                                     data-style="btn-form-control" class="form-control border-0 shadow-0 timepicker">
                             </div> -->
-                            <div class="col-lg-4" style="margin-bottom: 20px;">
-                                <button type="submit" class="btn btn-primary btn-block h-100"
-                                    id="main-search__submit">Tìm kiếm</button>
-                            </div>
+                        <div class="col-lg-4" style="margin-bottom: 20px;">
+                            <button class="btn btn-primary btn-block h-100" id="main-search__submit"
+                                (click)="reloadData()">Tìm kiếm</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -38,125 +34,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
+                    <tr *ngFor="let item of listSearch">
+                        <td>{{item.value}}</td>
+                        <td>{{item.priceServices.price}}</td>
+                        <td [style]="{color: item.numberMatch>2?'Red':'Green'}">
+                            {{item.numberMatch>2?'Full':'Available'}}</td>
                         <td>
-                            <button type="button" class="btn btn-primary h-100 w-50" (click)="openModal(template)">Book</button>
-
-                            <ng-template #template>
-                                <div class="modal-header">
-                                    <h4 class="modal-title pull-left">Look at</h4>
-                                    <button type="button" class="close pull-right" aria-label="Close"
-                                        (click)="modalRef.hide()">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Bạn có chắc muốn chọn khung giờ này không?</p>
-                                    <button type="button" class="btn btn-default float-right"
-                                        (click)="confirm(templateNested)">Yes</button>
-                                    <button type="button" class="btn btn-primary " (click)="decline()">No</button>
-                                </div>
-                            </ng-template>
-
-                            <ng-template #templateNested>
-                                <div class="modal-header">
-                                    <h4 class="modal-title pull-left">Check</h4>
-                                    <button type="button" class="close pull-right" aria-label="Close"
-                                        (click)="modalRef2.hide()">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Chọn phương thức thanh toán</p>
-                                    <select>
-                                        <option value="">
-                                    <label for="">Online</label>
-                                        </option>
-                                        <option value="">
-                                    <label for="">Tiền mặt</label>
-                                        </option>
-                                    </select><br>
-                                    <button *ngIf="modalRef" type="button" class="btn btn-primary "
-                                      style="margin-top: 10px;"  (click)="modalRef2.hide()">No</button>
-                                    <button *ngIf="modalRef" type="button" class="btn btn-default float-right" 
-                                      style="margin-top: 10px;"  (click)="yesPay()">Yes</button>
-                                </div>
-                            </ng-template>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>08:00 AM</td>
-                        <td>0.0</td>
-                        <td>1379</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>10:00 AM</td>
-                        <td>0.0</td>
-                        <td>1314</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>13:00 PM</td>
-                        <td>0.0</td>
-                        <td>1273</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>15:00 PM</td>
-                        <td>44.0</td>
-                        <td>0.0</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>17:00 PM</td>
-                        <td>31.0</td>
-                        <td>0.0</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>19:00 PM</td>
-                        <td>29.0</td>
-                        <td>0.0</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>21:00 PM</td>
-                        <td>24.0</td>
-                        <td>0.0</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>23:00 PM</td>
-                        <td>24.0</td>
-                        <td>0.0</td>
-                        <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Book
-                            </button>
+                            <button type="button" class="btn btn-primary h-100 w-50"
+                                (click)="openModal(template, item.value)" *ngIf="item.numberMatch<3">Book</button>
+                            <button type="button" class="btn btn-primary h-100 w-50" *ngIf="item.numberMatch>2"
+                                disabled>Book</button>
                         </td>
                     </tr>
                 </tbody>
@@ -165,3 +52,40 @@
     </div>
 </main>
 <app-footer></app-footer>
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Look at</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Bạn có chắc muốn chọn khung giờ này không?</p>
+        <button type="button" class="btn btn-default float-right" (click)="confirm(templateNested)">Yes</button>
+        <button type="button" class="btn btn-primary " (click)="decline()">No</button>
+    </div>
+</ng-template>
+
+<ng-template #templateNested>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Check</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Chọn phương thức thanh toán</p>
+        <select>
+            <option value="">
+                <label for="">Online</label>
+            </option>
+            <option value="">
+                <label for="">Tiền mặt</label>
+            </option>
+        </select><br>
+        <button *ngIf="modalRef" type="button" class="btn btn-primary " style="margin-top: 10px;"
+            (click)="modalRef2.hide()">No</button>
+        <button *ngIf="modalRef" type="button" class="btn btn-default float-right" style="margin-top: 10px;"
+            (click)="yesPay()">Yes</button>
+    </div>
+</ng-template>

@@ -16,13 +16,20 @@ export class RegisterComponent implements OnInit {
     console.log('sending');
     try {
       let ten = document.getElementById("ten") as HTMLInputElement;
+      let phone = document.getElementById("phoneNumber") as HTMLInputElement;
       let password = document.getElementById("user_password") as HTMLInputElement;
+      let confirmPassword = document.getElementById("user_password_confirmation") as HTMLInputElement;
+      if (password.value !== confirmPassword.value) {
+        window.alert("Xác nhận mật khẩu chưa khớp!");
+        return
+      }
       this.http.post<any>('http://localhost:3000/user/register', {
-        ten: ten.value,
+        userName: ten.value,
+        phoneNumber: phone.value,
         password: password.value,
       }).subscribe(data => {
         console.log(data)
-        if (data.status == "ok") {
+        if (data.code == 0) {
           window.alert("Đăng ký thành công!");
           this.router.navigateByUrl('/login');
         }

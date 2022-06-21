@@ -24,11 +24,11 @@ const routes: Routes = [
   { path: 'rank', component: RankComponent },
   { path: 'matches', component: MatchesComponent },
   { path: 'payment', component: PaymentComponent },
-  // { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
