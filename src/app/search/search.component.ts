@@ -28,7 +28,6 @@ export class SearchComponent implements OnInit {
 
   yesPay(): void{
     this.modalRef.hide();
-    window.alert("Đặt sân thành công!");
     this.router.navigateByUrl('/timeline');
   }
   ngOnInit(): void {
