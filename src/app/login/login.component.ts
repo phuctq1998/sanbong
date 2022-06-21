@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('role') != null && document.cookie.length > 0) this.router.navigateByUrl('/search');
   }
 
   login() {

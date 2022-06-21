@@ -20,13 +20,15 @@
                 <div class="navbar-callapse mr-3 callapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link" >Bảng Xếp Hạng</a>
+                            <a href="" class="nav-link">Bảng Xếp Hạng</a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">Quản Lý Sân</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link" routerLink="/login">Đăng nhập</a>
+                            <a href="" class="nav-link" routerLink="/login" (click)="logout()">
+                                {{logined?'Đăng xuất':"Đăng nhập"}}
+                            </a>
                         </li>
                     </ul>
                 </div>

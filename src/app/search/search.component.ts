@@ -61,6 +61,7 @@ export class SearchComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/login');
     this.listSearch = [];
     (document.getElementById('date') as HTMLInputElement).value = new Date().toISOString().substring(0, 10);
     this.reloadData()
