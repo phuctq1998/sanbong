@@ -20,13 +20,27 @@
                 <div class="navbar-callapse mr-3 callapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link">Bảng Xếp Hạng</a>
+                            <a href="" class="nav-link">
+                                {{role=='user'?'Đặt sân':""}}
+                                <ng-container *ngIf="role=='user'" routerLink="/search"></ng-container>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Quản Lý Sân</a>
+                            <a href="" class="nav-link">
+                                {{role=='user'?'Bảng Xếp Hạng':"Doanh thu"}}
+                                <ng-container *ngIf="role=='user'" routerLink="/rank"></ng-container>
+                                <ng-container *ngIf="role=='admin'" routerLink="/dashboard"></ng-container>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link" routerLink="/login" (click)="logout()">
+                            <a href="" class="nav-link">
+                                {{role=='user'?'Profile':"Quản lý trận"}}
+                                <ng-container *ngIf="role=='user'" routerLink="/profile"></ng-container>
+                                <ng-container *ngIf="role=='admin'" routerLink="/matches"></ng-container>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link" (click)="logout()">
                                 {{logined?'Đăng xuất':"Đăng nhập"}}
                             </a>
                         </li>
