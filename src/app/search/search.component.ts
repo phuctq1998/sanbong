@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
   yesPay(): void {
     this.http.post<any>("http://localhost:3000/user/createMatch", {
       day: this.currentDate,
-      hour: this.currentHour
+      hours: this.currentHour
     }).subscribe(data => {
       if (data.code == 0) {
         this.modalRef.hide();

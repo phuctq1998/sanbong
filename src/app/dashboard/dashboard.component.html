@@ -1,26 +1,22 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 <app-header></app-header>
 <main style="padding-top: 63px; background-color: ghostwhite;">
     <div class="container-fluid pt-3 pb-3 border-bottom px-lg-5">
         <div class="row justify-content-md-center">
             <div class="col-xl-9">
                 <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
-                    <form id="main-search-form" action="/dat-san-online">
-                        <div class="row">
-                            <div class="col-lg-6 d-flex align-items-center form-group">
-                                <input type="date" name="date"
-                                    class="datepicker datepicker-search form-control border-0 shadow-0"
-                                    data-provide="datepicker" value="T6, 17-06-2022">
-                            </div>
-                            <div class="col-lg-4" style="margin-bottom: 20px;">
-                                <button type="submit" class="btn btn-primary btn-block h-100"
-                                    id="main-search__submit">Tìm kiếm</button>
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center form-group">
+                            <input type="date" id="date"
+                                class="datepicker datepicker-search form-control border-0 shadow-0"
+                                data-provide="datepicker" value="T6, 17-06-2022">
                         </div>
-                    </form>
+                        <div class="col-lg-4" style="margin-bottom: 20px;">
+                            <button type="submit" class="btn btn-primary btn-block h-100" id="main-search__submit"
+                                (click)="reloadData()">
+                                Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,49 +33,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
+                    <tr *ngFor="let item of listSearch">
+                        <td>{{item.value}}</td>
+                        <td>{{item.numberMatch}}</td>
+                        <td>{{item.priceServices.price}}</td>
+                        <td>{{item.turnover}}</td>
                     </tr>
                     <tr>
-                        <td>08:00 AM</td>
-                        <td>0.0</td>
-                        <td>1379</td>
-                    </tr>
-                    <tr>
-                        <td>10:00 AM</td>
-                        <td>0.0</td>
-                        <td>1314</td>
-                    </tr>
-                    <tr>
-                        <td>13:00 PM</td>
-                        <td>0.0</td>
-                        <td>1273</td>
-                    </tr>
-                    <tr>
-                        <td>15:00 PM</td>
-                        <td>44.0</td>
-                        <td>0.0</td>
-                    </tr>
-                    <tr>
-                        <td>17:00 PM</td>
-                        <td>31.0</td>
-                        <td>0.0</td>
-                    <tr>
-                        <td>19:00 PM</td>
-                        <td>29.0</td>
-                        <td>0.0</td>
-                    </tr>
-                    <tr>
-                        <td>21:00 PM</td>
-                        <td>24.0</td>
-                        <td>0.0</td>
-                    </tr>
-                    <tr>
-                        <td>23:00 PM</td>
-                        <td>24.0</td>
-                        <td>0.0</td>
+                        <td style="font-weight: 700">Tổng</td>
+                        <td></td>
+                        <td></td>
+                        <td>{{totalTurnover}}</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,8 +1,3 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
 <body class="d-flex flex-colum h-100">
     <div class="sport-nav navbar-fixed">
         <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
@@ -20,23 +15,18 @@
                 <div class="navbar-callapse mr-3 callapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="" class="nav-link" *ngIf="role=='user'" [routerLink]="'/search'">
                                 {{role=='user'?'Đặt sân':""}}
-                                <ng-container *ngIf="role=='user'" routerLink="/search"></ng-container>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="" class="nav-link" [routerLink]="role=='user'?'/rank':'/dashboard'">
                                 {{role=='user'?'Bảng Xếp Hạng':"Doanh thu"}}
-                                <ng-container *ngIf="role=='user'" routerLink="/rank"></ng-container>
-                                <ng-container *ngIf="role=='admin'" routerLink="/dashboard"></ng-container>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="" class="nav-link" [routerLink]="role=='user'?'/profile':'/matches'">
                                 {{role=='user'?'Profile':"Quản lý trận"}}
-                                <ng-container *ngIf="role=='user'" routerLink="/profile"></ng-container>
-                                <ng-container *ngIf="role=='admin'" routerLink="/matches"></ng-container>
                             </a>
                         </li>
                         <li class="nav-item">

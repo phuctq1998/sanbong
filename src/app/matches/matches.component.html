@@ -1,26 +1,20 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 <app-header></app-header>
 <main style="padding-top: 63px; background-color: ghostwhite;   ">
     <div class="container-fluid pt-3 pb-3 border-bottom px-lg-5">
         <div class="row justify-content-md-center">
             <div class="col-xl-9">
                 <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
-                    <form id="main-search-form" action="/dat-san-online">
-                        <div class="row">
-                            <div class="col-lg-6 d-flex align-items-center form-group">
-                                <input type="date" name="date"
-                                    class="datepicker datepicker-search form-control border-0 shadow-0"
-                                    data-provide="datepicker" value="T6, 17-06-2022">
-                            </div>
-                            <div class="col-lg-4" style="margin-bottom: 20px;">
-                                <button type="submit" class="btn btn-primary btn-block h-100"
-                                    id="main-search__submit">Tìm kiếm</button>
-                            </div>
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center form-group">
+                            <input type="date" id="date"
+                                class="datepicker datepicker-search form-control border-0 shadow-0"
+                                data-provide="datepicker" value="T6, 17-06-2022">
                         </div>
-                    </form>
+                        <div class="col-lg-4" style="margin-bottom: 20px;">
+                            <button type="submit" class="btn btn-primary btn-block h-100" id="main-search__submit"
+                                (click)="reloadData()">Tìm kiếm</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,130 +26,31 @@
                     <tr>
                         <th scope="col">Khung giờ</th>
                         <th scope="col">Người đặt</th>
-                        <th scope="col">Club</th>
+                        <!-- <th scope="col">Club</th> -->
                         <th scope="col">Tỷ số</th>
-                        <th scope="col">Cập nhật</th>
-                        <th scope="col">Hủy đặt sân</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
+                    <tr *ngFor="let item of listSearch">
+                        <td>{{item.hours}}</td>
+                        <td>{{item['r_idHomeTeam.nameTeam']}}</td>
+                        <!-- <td>1754</td> -->
                         <td>
-                            <input style="width: 20px;" type="text">
+                            <input style="width: 20px;" type="text" [(ngModel)]="item.goalHomeTeam">
                             -
-                            <input style="width: 20px;" type="text">
+                            <input style="width: 20px;" type="text" [(ngModel)]="item.goalGuestTeam">
                         </td>
-                        <td><button type="button" class="btn btn-primary h-100 w-50">Up date</button></td>
+                        <td>
+                            <button type="button" class="btn btn-primary h-100 w-50" (click)="update(item)">
+                                Cập nhật
+                            </button>
+                        </td>
                         <td>
                             <button type="button" class="btn btn-primary h-100 w-50"
-                                (click)="openModal(template)">Hủy</button>
+                                (click)="openModal(template,item.id)">Hủy</button>
 
-                            <ng-template #template>
-                                <div class="modal-header">
-                                    <h4 class="modal-title pull-left">Lock at</h4>
-                                    <button type="button" class="close pull-right" aria-label="Close"
-                                        (click)="modalRef.hide()">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Bạn có chắc muốn hủy trận không?</p>
-                                    <button type="button" class="btn btn-default float-right"
-                                        (click)="confirm()">Yes</button>
-                                    <button type="button" class="btn btn-primary float-right"
-                                        (click)="decline()">No</button>
-                                </div>
-                            </ng-template>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06:00 AM</td>
-                        <td>0.0</td>
-                        <td>1754</td>
-                        <td>1754</td>
-                        <td>
-                            <button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                                Hủy
-                            </button>
                         </td>
                     </tr>
                 </tbody>
@@ -163,3 +58,17 @@
         </div>
     </div>
 </main>
+<app-footer></app-footer>
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Cảnh báo</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Bạn có chắc muốn hủy trận không?</p>
+        <button type="button" class="btn btn-default float-right" (click)="confirm()">Yes</button>
+        <button type="button" class="btn btn-primary float-right" (click)="decline()">No</button>
+    </div>
+</ng-template>

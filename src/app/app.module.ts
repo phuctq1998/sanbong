@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatchesComponent } from './matches/matches.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PaymentComponent } from './payment/payment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PaymentComponent } from './payment/payment.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

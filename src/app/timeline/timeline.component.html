@@ -1,7 +1,3 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 <app-header></app-header>
 <main style="padding-top: 63px; background-color: ghostwhite; padding-bottom: 50px;">
     <div class="container-fluid container-lg pt-3 pb-3 border-bottom px-lg-5">
@@ -25,17 +21,20 @@
                             <div class="m-2 col-lg-7 col-7 menu-items">
                                 <li class="mb-1" style="color: #93a3b5 !important;">
                                     <i class="fa fa-user-circle">
-                                        <a href=""  style="color: #93a3b5 !important;" routerLink="/profile" >Thông tin tài khoản</a>
+                                        <a href="" style="color: #93a3b5 !important;" routerLink="/profile">Thông tin
+                                            tài khoản</a>
                                     </i>
                                 </li>
                                 <li class="mb-1" style="color: #93a3b5 !important;">
                                     <i class="fa fa-clock-o">
-                                        <a href="" routerLink="/timeline" style="color: #93a3b5 !important;">Lịch của tôi</a>
+                                        <a href="" routerLink="/timeline" style="color: #93a3b5 !important;">Lịch của
+                                            tôi</a>
                                     </i>
                                 </li>
                                 <li class="mb-1" style="color: #93a3b5 !important;">
                                     <i class="fa fa-unlock-alt">
-                                        <a href="" style="color: #93a3b5 !important;" routerLink="/repassword">Đổi mật khẩu</a>
+                                        <a href="" style="color: #93a3b5 !important;" routerLink="/repassword">Đổi mật
+                                            khẩu</a>
                                     </i>
                                 </li>
                             </div>
@@ -45,95 +44,62 @@
             </div>
             <div class="col-md-8 col-lg-9 pl-3 pr-3">
                 <div class="user-page-content">
-                    <section class="border-light"> 
+                    <section class="border-light">
                         <div class="row justify-content-center m-2">
                             <h5 class="w-100 text-center d-none d-md-block">Lịch Đặt</h5>
                         </div>
-                        <form action="">
-                            <div class="row pl-md-2">
-                                <div class="col-xl-3 col-md-3 mb-4">
-                                    <label for="form_guests" class="form-label">Trạng thái</label>
-                                    <select name="status" id="form_guests" class=" form-control">
-                                        <option value="new">Chưa hoàn thành</option>
-                                        <option value="done">Đã Hoàn thành</option>
-                                    </select>
-                                </div>
-                                <div class="col-xl-3 col-md-3 mb-4">
-                                    <label for="begin_date" class="form-label">Từ ngày</label>
-                                    <input type="date" id="begin_date" name="begin_date" class="datepicker datepicker-begin form-control" data-provide="datepicker" value="09/05/2022">
-                                </div>
-                                <div class="col-xl-3 col-md-3 mb-4">
-                                    <label for="end_date" class="form-label">Đến ngày</label>
-                                    <input type="date" id="end_date" name="end_date" class="datepicker datepicker-end form-control" data-provide="datepicker" value="09/06/2022">
-                                </div>
-                                <div class="col-sm-3 mb-4 order-2 order-sm-1">
-                                    
-                                    <button type="submit" class="btn btn-primary search-btn" style="margin-top: 31px !important;">
-                                        <i class="fa fa-search mr-1"></i>
-                                        Tìm kiếm
-                                    </button>
-                                </div>
+                        <div class="row pl-md-2">
+                            <div class="col-xl-3 col-md-3 mb-4">
+                                <label for="form_guests" class="form-label">Trạng thái</label>
+                                <select name="status" id="form_guests" class=" form-control" [(ngModel)]="status"
+                                    (change)="this.listSearch=[]">
+                                    <option value="0">Chưa hoàn thành</option>
+                                    <option value="1">Đã Hoàn thành</option>
+                                </select>
                             </div>
-                        </form>
+                            <div class="col-xl-3 col-md-3 mb-4">
+                                <label for="begin_date" class="form-label"
+                                    [style]="{display:status==0?'none':'block'}">Từ ngày</label>
+                                <input type="date" id="begin_date" id="begin_date"
+                                    class="datepicker datepicker-begin form-control" data-provide="datepicker"
+                                    value="09/05/2022" [style]="{display:status==0?'none':'block'}">
+                            </div>
+                            <div class="col-xl-3 col-md-3 mb-4">
+                                <label for="end_date" class="form-label"
+                                    [style]="{display:status==0?'none':'block'}">Đến ngày</label>
+                                <input type="date" id="end_date" id="end_date"
+                                    class="datepicker datepicker-end form-control" data-provide="datepicker"
+                                    value="09/06/2022" [style]="{display:status==0?'none':'block'}">
+                            </div>
+                            <div class="col-sm-3 mb-4 order-2 order-sm-1">
+
+                                <button type="submit" class="btn btn-primary search-btn"
+                                    style="margin-top: 31px !important;" (click)="reloadData()">
+                                    <i class="fa fa-search mr-1"></i>
+                                    Tìm kiếm
+                                </button>
+                            </div>
+                        </div>
                     </section>
                 </div>
                 <div class="container" style="border-bottom: 1px solid;">
                     <div class="table-rankings">
-                        <table class="table table-responsive-lg text-gray-700 table-striped table-borderless table-hover pd-2">
+                        <table
+                            class="table table-responsive-lg text-gray-700 table-striped table-borderless table-hover pd-2">
                             <thead>
                                 <tr>
                                     <th scope="col">Khung giờ</th>
                                     <th scope="col">Giá</th>
                                     <th scope="col">Tỷ số</th>
-                                    <th scope="col">Đối thủ</th>
+                                    <th scope="col">Ngày</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>06:00 AM</td>
-                                    <td>0.0</td>
-                                    <td>1754</td>
-                                    <td>HN FC</td>
-                                </tr>
-                                <tr>
-                                    <td>08:00 AM</td>
-                                    <td>0.0</td>
-                                    <td>1379</td>
-                                </tr>
-                                <tr>
-                                    <td>10:00 AM</td>
-                                    <td>0.0</td>
-                                    <td>1314</td>
-                                </tr>
-                                <tr>
-                                    <td>13:00 PM</td>
-                                    <td>0.0</td>
-                                    <td>1273</td>
-                                </tr>
-                                <tr>
-                                    <td>15:00 PM</td>
-                                    <td>44.0</td>
-                                    <td>0.0</td>
-                                </tr>
-                                <tr>
-                                    <td>17:00 PM</td>
-                                    <td>31.0</td>
-                                    <td>0.0</td>
-                                </tr>
-                                <tr>
-                                    <td>19:00 PM</td>
-                                    <td>29.0</td>
-                                    <td>0.0</td>
-                                </tr>
-                                <tr>
-                                    <td>21:00 PM</td>
-                                    <td>24.0</td>
-                                    <td>0.0</td>
-                                </tr>
-                                <tr>
-                                    <td>23:00 PM</td>
-                                    <td>24.0</td>
-                                    <td>0.0</td>
+                                <tr *ngFor="let item of listSearch">
+                                    <td>{{item.hours}}</td>
+                                    <td>{{item['matchServices.price']}}</td>
+                                    <td>{{status==0?'-':item.goalHomeTeam+' - '+item.goalGuestTeam}}</td>
+                                    <td>{{item.day}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -141,8 +107,7 @@
                 </div>
             </div>
         </div>
-    </div>        
+    </div>
 </main>
 
 <app-footer></app-footer>
-
