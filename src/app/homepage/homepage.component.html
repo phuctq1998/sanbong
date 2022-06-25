@@ -1,44 +1,73 @@
 <app-header></app-header>
 
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-
 <main>
-
   <div id="demo" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="../../assets/slide/homepage.jpg" alt="Los Angeles" width="100%" height="500">
         <div class="carousel-caption">
           <h1 style="color: rgb(252, 7, 7); margin-bottom: 30px; font-size: 50px;">WELCOME TO SPORTA</h1>
-          <h2 style="margin-bottom: 40px; color: yellow;">
+          <h2 style="margin-bottom: 150px; color: yellow;">
             CÁP KÈO NHANH CHÓNG - TÌM ĐỐI DỄ DÀNG
           </h2>
-          <div class="search-bar mt-4 p-3 p-lg-1 pl-lg-4"
-            style="margin-bottom: 140px !important; height: 45px; width: 60%; margin-left: 180px;">
-            <form id="main-search-form" action="/dat-san-online">
-              <div class="row" style=" width: 100%; display: flex; justify-content: space-between; margin: 0; ">
-                <div class="col-lg-4 d-flex align-items-center form-group">
-                  <input type="date" name="date" class="datepicker datepicker-search form-control border-0 shadow-0"
-                    data-provide="datepicker" value="T6, 17-06-2022">
-                </div>
-                <div class="col-lg-4" style="margin-bottom: 15px !important; padding-right: 0px;">
-                  <button type="submit" class="btn btn-primary btn-block rounded-xl h-100" routerLink="/search">Tìm
-                    kiếm</button> <!-- Submit btn -->
-                </div>
-              </div>
-            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+      <div class="d-flex flex-column col-md-8">
+        <div class="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
+          <h3>ĐÁNH GIÁ CỦA KHÁCH HÀNG</h3>
+        </div>
+        <div class="coment-bottom bg-white">
+          <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+            <label for="" ><div class="rating"> 
+              <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+              <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+              <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+              <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+              <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+          </div></label>
+            <input type="text" class="form-control mr-3" placeholder="Add comment"><button
+              class="btn btn-primary" type="button">Comment</button></div>
+          <div class="commented-section mt-2" style="margin-bottom: 20px;">
+            <div class="d-flex flex-row align-items-center commented-user">
+              <h5 class="mr-2">Corey oates</h5><span class="dot mb-1"></span>
+            </div>
+            <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+          </div>
+          <div class="commented-section mt-2">
+            <div class="d-flex flex-row align-items-center commented-user">
+              <h5 class="mr-2">Samoya Johns</h5><span class="dot mb-1"></span>
+            </div>
+            <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua..</span></div>
+          </div>
+          <div class="commented-section mt-2">
+            <div class="d-flex flex-row align-items-center commented-user">
+              <h5 class="mr-2">Makhaya andrew</h5><span class="dot mb-1"></span>
+            </div>
+            <div class="comment-text-sm"><span>Nunc sed id semper risus in hendrerit gravida rutrum. Non odio euismod
+                lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Enim
+                facilisis gravida neque convallis a. In mollis nunc sed id. Adipiscing elit pellentesque habitant morbi
+                tristique senectus et netus. Ultrices mi tempus imperdiet nulla malesuada pellentesque.</span></div>
+          </div>
+          <div class="commented-section mt-2">
+            <div class="d-flex flex-row align-items-center commented-user">
+              <h5 class="mr-2">Makhaya andrew</h5><span class="dot mb-1"></span>
+            </div>
+            <div class="comment-text-sm"><span>Nunc sed id semper risus in hendrerit gravida rutrum. Non odio euismod
+                lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Enim
+                facilisis gravida neque convallis a. In mollis nunc sed id. Adipiscing elit pellentesque habitant morbi
+                tristique senectus et netus. Ultrices mi tempus imperdiet nulla malesuada pellentesque.</span></div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-
 </main>
 
 

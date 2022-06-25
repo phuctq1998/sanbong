@@ -13,7 +13,7 @@ import { MatchesComponent } from './matches/matches.component';
 import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
-  // { path: 'home', component: HomepageComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'rank', component: RankComponent },
   { path: 'matches', component: MatchesComponent },
   { path: 'payment', component: PaymentComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

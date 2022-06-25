@@ -57,7 +57,7 @@
     </div>
     <div class="modal-body">
         <p>Bạn có chắc muốn chọn khung giờ này không?</p>
-        <button type="button" class="btn btn-default float-right" (click)="confirm(templateNested)">Yes</button>
+        <button type="button" class="btn btn-primary float-right" (click)="confirm(templateNested)">Yes</button>
         <button type="button" class="btn btn-primary " (click)="decline()">No</button>
     </div>
 </ng-template>
@@ -81,7 +81,7 @@
         </select><br>
         <button *ngIf="modalRef" type="button" class="btn btn-primary " style="margin-top: 10px;"
             (click)="modalRef2.hide()">No</button>
-        <button *ngIf="modalRef" type="button" class="btn btn-default float-right" style="margin-top: 10px;"
+        <button *ngIf="modalRef" type="button" class="btn btn-primary float-right" style="margin-top: 10px;"
             (click)="yesPay()">Yes</button>
     </div>
 </ng-template>

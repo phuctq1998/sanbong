@@ -21,17 +21,24 @@
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link" [routerLink]="role=='user'?'/rank':'/dashboard'">
-                                {{role=='user'?'Bảng Xếp Hạng':"Doanh thu"}}
+                                {{role=='user'?'Bảng Xếp Hạng':""}}
+                                {{role=='admin'?'Doanh thu':""}}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link" [routerLink]="role=='user'?'/profile':'/matches'">
-                                {{role=='user'?'Profile':"Quản lý trận"}}
+                                {{role=='user'?'Profile':""}}
+                                {{role=='admin'?'Quản lý trận':""}}
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link" (click)="logout()">
-                                {{logined?'Đăng xuất':"Đăng nhập"}}
+                            <a href="" class="nav-link" (click)="logout()" routerLink="/login">
+                                {{logined?'Đăng xuất':"Đăng nhập" }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" *ngIf="currentUrl == '/home'&&!logined" routerLink="/register">
+                                Đăng ký
                             </a>
                         </li>
                     </ul>

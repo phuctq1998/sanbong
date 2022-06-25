@@ -11,7 +11,7 @@ export class RankComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/login');
+    if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
   }
 
 }
