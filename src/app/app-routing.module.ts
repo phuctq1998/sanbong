@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'rank', component: RankComponent },
   { path: 'matches', component: MatchesComponent },
-  { path: 'payment', component: PaymentComponent },
+  { path: 'joinsolo', component: PaymentComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

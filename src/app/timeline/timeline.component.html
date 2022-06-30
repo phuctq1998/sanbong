@@ -91,6 +91,7 @@
                                     <th scope="col">Khung giờ</th>
                                     <th scope="col">Giá</th>
                                     <th scope="col">Tỷ số</th>
+                                    <th scope="col">Đối thủ</th>
                                     <th scope="col">Ngày</th>
                                 </tr>
                             </thead>
@@ -99,6 +100,7 @@
                                     <td>{{item.hours}}</td>
                                     <td>{{item['matchServices.price']}}</td>
                                     <td>{{status==0?'-':item.goalHomeTeam+' - '+item.goalGuestTeam}}</td>
+                                    <td>{{item['r_idGuestTeam.nameTeam']}}</td>
                                     <td>{{item.day}}</td>
                                 </tr>
                             </tbody>

@@ -1,5 +1,5 @@
 <app-header></app-header>
-<main style="padding-top: 63px;"> 
+<main style="padding-top: 63px;">
   <div class="container text-center">
     <div class="league-info">
       <h1>BẢNG XẾP HẠNG</h1>
@@ -12,157 +12,29 @@
           <tr>
             <th scope="col">Hạng</th>
             <th scope="col" style="width: 250px;">Tên</th>
-            <th scope="col">Trận</th>
+            <!-- <th scope="col">Trận</th>
             <th scope="col">Thắng</th>
             <th scope="col">Hòa</th>
-            <th scope="col">Thua</th>
+            <th scope="col">Thua</th> -->
             <th scope="col">Điểm xếp hạng</th>
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <th style="font-size: 20px;">🏆🥇</th>
-              <td class="team_name">
-                <span>SVTN VIS</span>
-              </td>
-              <td>35</td>
-              <td>12</td>
-              <td>6</td>
-              <td>14</td>
-              <td>146</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-              <th style="font-size: 20px;">🥈</th>
-              <td class="team_name">
-                <span>Navy FC</span>
-              </td>
-              <td>23</td>
-              <td>13</td>
-              <td>2</td>
-              <td>5</td>
-              <td>206</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-              <th style="font-size: 20px;">🥉</th>
-              <td class="team_name">
-                <span>FC Áo Tập</span>
-              </td>
-              <td>23</td>
-              <td>6</td>
-              <td>3</td>
-              <td>11</td>
-              <td>116</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>4</th>
-              <td class="team_name">
-                <span>𝗛𝗢𝗧 𝗕𝗟𝗢𝗢𝗗 𝗙𝗖</span>
-              </td>
-              <td>19</td>
-              <td>15</td>
-              <td>2</td>
-              <td>1</td>
-              <td>147</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>5</th>
-              <td class="team_name">
-                <span>FC AEVP</span>
-              </td>
-              <td>17</td>
-              <td>10</td>
-              <td>4</td>
-              <td>3</td>
-              <td>152</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>6</th>
-              <td class="team_name">
-                <span>Karaoke 165 Trần Đăng Ninh FC</span>
-              </td>
-              <td>16</td>
-              <td>12</td>
-              <td>1</td>
-              <td>1</td>
-              <td>163</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>7</th>
-              <td class="team_name">
-                   <span>StepUp&amp;Friends</span>
-              </td>
-              <td>8</td>
-              <td>3</td>
-              <td>1</td>
-              <td>3</td>
-              <td>116</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>8</th>
-              <td class="team_name">
-                <span>FC RƯỢU CAN LộC</span>
-              </td>
-              <td>12</td>
-              <td>4</td>
-              <td>3</td>
-              <td>4</td>
-              <td>147</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>9</th>
-              <td class="team_name">
-                <span>Fc Bắc Đảo</span>
-              </td>
-              <td>19</td>
-              <td>12</td>
-              <td>0</td>
-              <td>7</td>
-              <td>133</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
-            <tr>
-                <th>10</th>
-              <td class="team_name"><span>FC StartUp</span>
-              </td>
-              <td>12</td>
-              <td>7</td>
-              <td>1</td>
-              <td>1</td>
-              <td>136</td>
-              <td><button type="submit" class="btn btn-primary btn-block h-100 w-50">
-                Join
-            </button></td>
-            </tr>
+          <tr *ngFor="let item of listData; let index = index">
+            <td style="font-size: 20px;">{{index==0?'🏆🥇':index==1?'🥈':index==2?'🥉':index}}</td>
+            <td class="team_name">
+              <span>{{item.nameTeam}}</span>
+            </td>
+            <!-- <td>35</td>
+            <td>12</td>
+            <td>6</td>
+            <td>14</td> -->
+            <td>{{item.pointRank}}</td>
+          </tr>
         </tbody>
       </table>
       <div class="justify-content-center d-flex">
-        
+
       </div>
     </div>
   </div>

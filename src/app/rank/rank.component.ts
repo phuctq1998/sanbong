@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
 
@@ -8,10 +9,17 @@ import { Router, Routes } from '@angular/router';
 })
 export class RankComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
+  listData: any;
 
   ngOnInit(): void {
     if (localStorage.getItem('role') == null || document.cookie.length == 0) this.router.navigateByUrl('/home');
+    this.reloadData();
   }
-
+  reloadData() {
+    this.http.get('http://localhost:3000/home/rankTeam').subscribe(data => {
+      console.log(data);
+      this.listData = JSON.parse(JSON.stringify(data))['user'];
+    })
+  }
 }

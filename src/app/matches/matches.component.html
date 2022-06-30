@@ -28,6 +28,7 @@
                         <th scope="col">Người đặt</th>
                         <!-- <th scope="col">Club</th> -->
                         <th scope="col">Tỷ số</th>
+                        <th scope="col">Đối thủ</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
@@ -38,11 +39,12 @@
                         <td>{{item['r_idHomeTeam.nameTeam']}}</td>
                         <!-- <td>1754</td> -->
                         <td>
-                            <input type="text" style="width: 100px;">
                             <input style="width: 20px;" type="text" [(ngModel)]="item.goalHomeTeam">
                             -
                             <input style="width: 20px;" type="text" [(ngModel)]="item.goalGuestTeam">
-                            <input type="text" style="width: 100px;">
+                        </td>
+                        <td>
+                            {{item['r_idGuestTeam.nameTeam']}}
                         </td>
                         <td>
                             <button type="button" class="btn btn-primary h-100 w-50" (click)="update(item)">

@@ -50,13 +50,18 @@
 <app-footer></app-footer>
 <ng-template #template>
     <div class="modal-header">
-        <h4 class="modal-title pull-left">Look at</h4>
+        <h4 class="modal-title pull-left">Xác nhận đặt sân</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <p>Bạn có chắc muốn chọn khung giờ này không?</p>
+        <p>Hình thức trận</p>
+        <div class="check" style="width: 100%;">
+            <input type="checkbox" id="exampleCheck1" style="margin: 0 20px;" [(ngModel)]="solo">
+            <label for="exampleCheck1">Cáp kèo</label>
+        </div>
+        <br>
         <button type="button" class="btn btn-primary float-right" (click)="confirm(templateNested)">Yes</button>
         <button type="button" class="btn btn-primary " (click)="decline()">No</button>
     </div>
@@ -64,7 +69,7 @@
 
 <ng-template #templateNested>
     <div class="modal-header">
-        <h4 class="modal-title pull-left">Check</h4>
+        <h4 class="modal-title pull-left">Hình thức</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
             <span aria-hidden="true">&times;</span>
         </button>

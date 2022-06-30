@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   listSearch: any;
   currentHour: any;
   currentDate: any;
+  solo = false;
   constructor(private modalService: BsModalService, private router: Router, private http: HttpClient) { }
 
   openModal(template: TemplateRef<any>, hour: any) {
@@ -22,8 +23,9 @@ export class SearchComponent implements OnInit {
     this.modalRef = this.modalService.show(template);
   }
   confirm(template: TemplateRef<any>): void {
+    this.modalRef.hide();
     this.modalRef2 = this.modalService.show(template);
-    this.modalRef2.hide();
+    // this.modalRef2.hide();
   }
 
   decline(): void {
@@ -33,7 +35,8 @@ export class SearchComponent implements OnInit {
   yesPay(): void {
     this.http.post<any>("http://localhost:3000/user/createMatch", {
       day: this.currentDate,
-      hours: this.currentHour
+      hours: this.currentHour,
+      solo: this.solo,
     }).subscribe(data => {
       if (data.code == 0) {
         this.modalRef.hide();
