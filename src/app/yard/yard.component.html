@@ -1,0 +1,57 @@
+<app-header></app-header>
+<main style="padding-top: 63px; background-color: ghostwhite;">
+    <div class="container-fluid pt-3 pb-3 border-bottom px-lg-5">
+        <div class="row justify-content-md-center">
+            <div class="col-xl-9">
+                <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
+                    <div class="row">
+                        <div class="col-lg-6 d-flex align-items-center form-group">
+                            <input type="date" id="date"
+                                class="datepicker datepicker-search form-control border-0 shadow-0"
+                                data-provide="datepicker" value="T6, 17-06-2022">
+                        </div>
+                        <div class="col-lg-4" style="margin-bottom: 20px;">
+                            <button type="submit" class="btn btn-primary btn-block h-100" id="main-search__submit">
+                                Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="border-bottom: 1px solid;">
+        <div class="table-rankings">
+            <table class="table table-responsive-lg text-gray-700 table-striped table-borderless table-hover pd-2">
+                <thead>
+                    <tr>
+                        <th scope="col">Tên sân</th>
+                        <th scope="col">Khung giờ</th>
+                        <th scope="col">Trạng thái</th>
+                        <th scope="col">Cập nhật</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sân 1 5 vs 5</td>
+                        <td>
+                            <select name="time" id="time" >
+                                <option *ngFor="let time of time">{{time}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status" id="status">
+                                <option>Available</option>
+                                <option>Unavailable</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary h-100 w-50">Submit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>

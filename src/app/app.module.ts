@@ -19,6 +19,7 @@ import { MatchesComponent } from './matches/matches.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PaymentComponent } from './payment/payment.component';
 import { FormsModule } from '@angular/forms';
+import { YardComponent } from './yard/yard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     RankComponent,
     MatchesComponent,
-    PaymentComponent
+    PaymentComponent,
+    YardComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@
                         <div class="col-lg-6 d-flex align-items-center form-group">
                             <input type="date" id="date"
                                 class="datepicker datepicker-search form-control border-0 shadow-0"
-                                data-provide="datepicker" value="T6, 17-06-2022">
+                                data-provide="datepicker">
                         </div>
                         <div class="col-lg-4" style="margin-bottom: 20px;">
                             <button type="submit" class="btn btn-primary btn-block h-100" id="main-search__submit"
@@ -29,6 +29,7 @@
                         <!-- <th scope="col">Club</th> -->
                         <th scope="col">Tỷ số</th>
                         <th scope="col">Đối thủ</th>
+                        <th scope="col">Phương thức thanh toán</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
@@ -47,8 +48,14 @@
                             {{item['r_idGuestTeam.nameTeam']}}
                         </td>
                         <td>
+                            <select name="pay" id="pay">
+                                <option>Online</option>
+                                <option>Tiền mặt</option>
+                            </select>
+                        </td>
+                        <td>
                             <button type="button" class="btn btn-primary h-100 w-50" (click)="update(item)">
-                                Cập nhật
+                                Thanh toán
                             </button>
                         </td>
                         <td>

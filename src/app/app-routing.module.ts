@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { RankComponent } from './rank/rank.component';
 import { MatchesComponent } from './matches/matches.component';
 import { PaymentComponent } from './payment/payment.component';
+import { YardComponent } from './yard/yard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'rank', component: RankComponent },
   { path: 'matches', component: MatchesComponent },
   { path: 'joinsolo', component: PaymentComponent },
+  { path: 'yard', component: YardComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
