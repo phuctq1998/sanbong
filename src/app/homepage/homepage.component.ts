@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -30,6 +30,8 @@ export class HomepageComponent implements OnInit {
       this.http.post<any>('http://localhost:3000/user/createComment', {
         content: content.value,
         star: rating,
+      }, {
+        withCredentials: true
       }).subscribe(data => {
         console.log(data)
         if (data.code == "0") {
@@ -45,7 +47,11 @@ export class HomepageComponent implements OnInit {
     }
   }
   reloadData() {
-    this.http.get('http://localhost:3000/user/showComment').subscribe(data => {
+    this.http.get('http://localhost:3000/user/showComment', {
+      params: {
+        idUser: localStorage.getItem('cookieIdUserName') + ''
+      }
+    }).subscribe(data => {
       console.log(data);
       this.listComment = JSON.parse(JSON.stringify(data))['comment'];
     })

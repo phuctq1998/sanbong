@@ -20,7 +20,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link" *ngIf="role=='user'" [routerLink]="'/search'">
+                            <a href="" class="nav-link" [routerLink]="role=='user'?'/search':'/yard'">
                                 {{role=='user'?'Đặt sân':""}}
                                 {{role=='admin'?'Quản lý sân':""}}
                             </a>

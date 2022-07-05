@@ -54,37 +54,35 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="d-flex justify-content-center">
-                                    <form action="" class="w-75" method="post">
-                                        <input type="hidden" name="utf8" value="✓">
-                                        <input type="hidden" name="_method" value="put">
+                                    <div class="w-75">
                                         <div class="form-row">
                                             <div class="col-md-6 form-group">
-                                                <label for="user_email">CLUB</label>
-                                                <input class="form-control" placeholder="Club" type="text" value=""
-                                                    name="" id="">
+                                                <label>CLUB</label>
+                                                <input class="form-control" type="text" [(ngModel)]="data.nameTeam">
                                             </div>
                                             <div class="col-md-6 form-group">
-                                                <label for="user_name">Họ Tên</label>
-                                                <input class="form-control" placeholder="Họ Tên" type="text"
-                                                    name="user[name]" id="user_name">
+                                                <label for="user_name">Số tiền: {{data.money}}</label>
+                                                <!-- <input class="form-control" placeholder="Họ Tên" type="text"
+                                                    name="user[name]" id="user_name"> -->
+                                                <br>
+                                                <label for="user_name">PointRank: {{data.pointRank}}</label>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="user_phone_attributes_number">Số điện thoại</label>
-                                            <input class="form-control" placeholder="Số điện thoại" type="text"
-                                                name="user[phone_attributes][number]" id="user_phone_attributes_number">
+                                            <label>Số điện thoại</label>
+                                            <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                [(ngModel)]="data.phoneNumber">
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-12 form-group">
-                                                <label for="user_date_of_birth">Ngày sinh</label>
-                                                <input class="form-control" placeholder="Ngày sinh" type="date"
-                                                    name="user[date_of_birth]" id="user_date_of_birth">
+                                                <label for="user_date_of_birth">Email</label>
+                                                <input class="form-control" type="email" [(ngModel)]="data.email">
                                             </div>
                                         </div>
-
-                                        <button name="button" type="submit" class="btn btn-primary">Cập
-                                            nhật</button>
-                                    </form>
+                                        <button name="button" class="btn btn-primary" (click)="update()">
+                                            Cập nhật
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -22,14 +22,18 @@ export class LoginComponent implements OnInit {
       this.http.post<any>('http://localhost:3000/user/login', {
         userName: userName.value,
         password: password.value,
-      }).subscribe(data => {
+      }, {
+        withCredentials: true
+      }
+      ).subscribe(data => {
         console.log(data)
         if (data.code == "0") {
           window.alert("Đăng nhập thành công!");
           if (data.user.role == 'admin') this.router.navigateByUrl('/dashboard');
           else this.router.navigateByUrl('/search');
           document.cookie = "cookieIdUserName=" + data.cookieIdUserName;
-          localStorage.setItem('role', data.user.role)
+          localStorage.setItem('role', data.user.role);
+          localStorage.setItem('userId', data.user.id)
         }
         else {
           window.alert("Đăng nhập thất bại!")

@@ -28,9 +28,10 @@ export class TimelineComponent implements OnInit {
       tDay: endDay,
     }
     this.http.get('http://localhost:3000/user/historyMatch', {
-      params: params
+      params: params,
+      withCredentials: true
     }).subscribe(data => {
-      this.listSearch = JSON.parse(JSON.stringify(data))['data'];
+      this.listSearch = JSON.parse(JSON.stringify(data))['match'];
       for (let index = 0; index < this.listSearch.length; index++) {
         const element = this.listSearch[index];
         element.day = element.day.split('T')[0];

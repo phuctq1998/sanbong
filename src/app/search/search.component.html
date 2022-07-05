@@ -5,6 +5,13 @@
             <div class="col-xl-9">
                 <div class="search-bar p-3 p-lg-1 pl-lg-4" style="border-radius: 0px !important;">
                     <div class="row">
+                        <div class="col-lg-2 d-flex align-items-center form-group">
+                            <select name="yard" id="yard" [(ngModel)]="selectedPitch">
+                                <option *ngFor="let item of listPitch" [value]="item.id">
+                                    {{item.name + ' '+item.type}}
+                                </option>
+                            </select>
+                        </div>
                         <div class="col-lg-6 d-flex align-items-center form-group">
                             <input type="date" id="date"
                                 class="datepicker datepicker-search form-control border-0 shadow-0">
@@ -33,12 +40,12 @@
                     <tr *ngFor="let item of listSearch">
                         <td>{{item.value}}</td>
                         <td>{{item.priceServices.price}}</td>
-                        <td [style]="{color: item.numberMatch>2?'Red':'Green'}">
-                            {{item.numberMatch>2?'Full':'Available'}}</td>
+                        <td [style]="{color: item.codeHours.id!=null?'Red':'Green'}">
+                            {{item.codeHours.id!=null?'Full':'Available'}}</td>
                         <td>
                             <button type="button" class="btn btn-primary h-100 w-50"
-                                (click)="openModal(template, item.value)" *ngIf="item.numberMatch<3">Book</button>
-                            <button type="button" class="btn btn-primary h-100 w-50" *ngIf="item.numberMatch>2"
+                                (click)="openModal(template, item.value)" *ngIf="item.codeHours.id==null">Book</button>
+                            <button type="button" class="btn btn-primary h-100 w-50" *ngIf="item.codeHours.id!=null"
                                 disabled>Book</button>
                         </td>
                     </tr>
@@ -56,13 +63,24 @@
         </button>
     </div>
     <div class="modal-body">
-        <p>Hình thức trận</p>
-        <div class="yard-type">
-            <button type="button" class="btn btn-primary" >Sân 1 - 5 vs 5</button>
-            <button type="button" class="btn btn-primary" >Sân 2 - 7 vs 7</button>
-            <button type="button" class="btn btn-primary" >Sân 3 - 9 vs 9</button>
-            <button type="button" class="btn btn-primary" >Sân 4 - 11 vs 11</button>
+        <div class="d-flex align-items-center form-group">
+            <label for="pitchList" style="margin-right: 20px;" *ngIf="showPitchList">Chọn sân: </label>
+            <select name="yard" id="pitchList" [(ngModel)]="selectedPitch" *ngIf="showPitchList">
+                <option *ngFor="let item of listPitch" [value]="item.id">
+                    {{item.name + ' '+item.type}}
+                </option>
+            </select>
         </div>
+        <!-- <div class="form-check" style="width: 100%;" *ngFor="let item of listPitch">
+            <input style="margin: 0 20px;" class="form-check-input" type="radio" name="exampleRadios"
+                id="exampleRadios1" [value]="item.id">
+            <label class="form-check-label" for="exampleRadios1">
+                {{item.name + ' '+item.type}}
+            </label>
+        <button type="button" class="btn btn-primary w-60" style="margin: 5px 5px;"
+                *ngFor="let item of listPitch">{{item.name + ' '+item.type}}</button>
+        </div> -->
+        <p>Hình thức trận</p>
         <div class="check" style="width: 100%;">
             <input type="checkbox" id="exampleCheck1" style="margin: 0 20px;" [(ngModel)]="solo">
             <label for="exampleCheck1">Cáp kèo</label>

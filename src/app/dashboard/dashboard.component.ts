@@ -20,8 +20,9 @@ export class DashboardComponent implements OnInit {
     this.currentDate = day;
     this.http.get('http://localhost:3000/home/searchMatch', {
       params: {
-        day: day
-      }
+        day
+      },
+      withCredentials: true
     }).subscribe(data => {
       console.log(data);
       this.listSearch = JSON.parse(JSON.stringify(data))['match'];

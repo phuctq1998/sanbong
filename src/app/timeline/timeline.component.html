@@ -90,8 +90,9 @@
                                 <tr>
                                     <th scope="col">Khung giờ</th>
                                     <th scope="col">Giá</th>
+                                    <th scope="col">Đội nhà</th>
                                     <th scope="col">Tỷ số</th>
-                                    <th scope="col">Đối thủ</th>
+                                    <th scope="col">Đội khách</th>
                                     <th scope="col">Tên sân</th>
                                     <th scope="col">Ngày</th>
                                 </tr>
@@ -99,10 +100,13 @@
                             <tbody>
                                 <tr *ngFor="let item of listSearch">
                                     <td>{{item.hours}}</td>
-                                    <td>{{item['matchServices.price']}}</td>
-                                    <td>{{status==0?'-':item.goalHomeTeam+' - '+item.goalGuestTeam}}</td>
-                                    <td></td>
+                                    <td>{{item['codeHours.priceServices.price']}}</td>
+                                    <td>{{item['r_idHomeTeam.nameTeam']}}</td>
+                                    <td style="text-align: center;">
+                                        {{status==0?'-':item.goalHomeTeam+' - '+item.goalGuestTeam}}
+                                    </td>
                                     <td>{{item['r_idGuestTeam.nameTeam']}}</td>
+                                    <td>{{item['r_idPitch.name']}}</td>
                                     <td>{{item.day}}</td>
                                 </tr>
                             </tbody>

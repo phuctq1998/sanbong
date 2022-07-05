@@ -25,6 +25,7 @@ export class MatchesComponent implements OnInit {
     this.message = 'Confirmed!';
     this.http.get('http://localhost:3000/admin/deleteMatch', {
       params: {
+        idUser: localStorage.getItem('cookieIdUserName') + '',
         id: this.currentId
       }
     }).subscribe(data => {
@@ -49,17 +50,22 @@ export class MatchesComponent implements OnInit {
     this.currentDate = day;
     this.http.get('http://localhost:3000/admin/showMatchUpdate', {
       params: {
-        day: day
+        day
       }
     }).subscribe(data => {
       console.log(data);
       this.listSearch = JSON.parse(JSON.stringify(data))['data'];
+      for (let index = 0; index < this.listSearch.length; index++) {
+        const element = this.listSearch[index];
+        element.typePayment = 0
+      }
     })
   }
   update(item: any) {
     this.http.post<any>('http://localhost:3000/admin/updateMatch', {
       goalHomeTeam: item.goalHomeTeam,
-      goalGuestTeam: item.goalGuestTeam
+      goalGuestTeam: item.goalGuestTeam,
+      typePayment: item.typePayment
     }, {
       params: {
         id: item.id

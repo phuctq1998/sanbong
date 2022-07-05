@@ -48,18 +48,18 @@
                             {{item['r_idGuestTeam.nameTeam']}}
                         </td>
                         <td>
-                            <select name="pay" id="pay">
-                                <option>Online</option>
-                                <option>Tiền mặt</option>
+                            <select name="pay" id="pay" [(ngModel)]="item.typePayment">
+                                <option [value]="0">Online</option>
+                                <option [value]="1">Tiền mặt</option>
                             </select>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary h-100 w-50" (click)="update(item)">
+                            <button type="button" class="btn btn-primary h-100" (click)="update(item)">
                                 Thanh toán
                             </button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary h-100 w-50"
+                            <button type="button" class="btn btn-primary h-100 "
                                 (click)="openModal(template,item.id)">Hủy</button>
 
                         </td>

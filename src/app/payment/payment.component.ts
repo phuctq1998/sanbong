@@ -38,7 +38,8 @@ export class PaymentComponent implements OnInit {
     this.http.get("http://localhost:3000/user/joinMatch", {
       params: {
         idMatch: this.currentMatchId
-      }
+      },
+      withCredentials: true
     }).subscribe(data => {
       if (JSON.parse(JSON.stringify(data))['code'] == 0) {
         this.modalRef.hide();
