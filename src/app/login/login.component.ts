@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         if (data.code == "0") {
           window.alert("Đăng nhập thành công!");
           if (data.user.role == 'admin') this.router.navigateByUrl('/dashboard');
-          else this.router.navigateByUrl('/search');
+          else this.router.navigateByUrl('/home');
           document.cookie = "cookieIdUserName=" + data.cookieIdUserName;
           localStorage.setItem('role', data.user.role);
           localStorage.setItem('userId', data.user.id)
